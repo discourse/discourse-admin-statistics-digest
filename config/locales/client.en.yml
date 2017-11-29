@@ -19,3 +19,6 @@ en:
   js:
     admin_statistics_digest:
       title: "Admin Statistics Digest"
+      preview:
+        send: "Send"
+        send_digest: "Send a preview of the email for the current month"

@@ -1,19 +1,25 @@
-require_relative './active_responder'
 require_relative './active_user'
-require_relative './most_replied_topic'
-require_relative './most_liked_post'
-require_relative './popular_post'
-require_relative './popular_topic'
+require_relative './post_read'
+require_relative './post_created'
+require_relative './topic_created'
+require_relative './new_user'
+require_relative './user_visit'
+require_relative './daily_active_user'
+require_relative './user_action'
+require_relative './flagged_post'
 
 class AdminStatisticsDigest::Report
 
   REPORTS = {
     active_users: AdminStatisticsDigest::ActiveUser,
-    active_responders: AdminStatisticsDigest::ActiveResponder,
-    most_liked_posts: AdminStatisticsDigest::MostLikedPost,
-    most_replied_topics: AdminStatisticsDigest::MostRepliedTopic,
-    popular_posts: AdminStatisticsDigest::PopularPost,
-    popular_topics: AdminStatisticsDigest::PopularTopic,
+    posts_read: AdminStatisticsDigest::PostRead,
+    posts_created: AdminStatisticsDigest::PostCreated,
+    new_users: AdminStatisticsDigest::NewUser,
+    user_visits: AdminStatisticsDigest::UserVisit,
+    topics_created: AdminStatisticsDigest::TopicCreated,
+    daily_active_users: AdminStatisticsDigest::DailyActiveUser,
+    user_actions: AdminStatisticsDigest::UserAction,
+    flagged_posts: AdminStatisticsDigest::FlaggedPost
   }.freeze
 
   def self.generate(&block)

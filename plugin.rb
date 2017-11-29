@@ -5,65 +5,44 @@
 # url: https://github.com/discourse/discourse-admin-statistics-digest
 
 
-enabled_site_setting :admin_statistics_digest
+enabled_site_setting :admin_statistics_digest_enabled
 
-gem 'rufus-scheduler', '3.1.8'
-gem 'sidekiq-scheduler', '2.0.9'
+PLUGIN_NAME = 'admin-statistics-digest'.freeze
 
 add_admin_route 'admin_statistics_digest.title', 'admin-statistics-digest'
 
 after_initialize do
 
-  load File.expand_path('../../discourse-admin-statistics-digest/lib/admin_statistics_digest.rb', __FILE__)
+  require_dependency 'admin_constraint'
 
   module ::AdminStatisticsDigest
     class Engine < ::Rails::Engine
-      engine_name ::AdminStatisticsDigest.plugin_name
+      engine_name PLUGIN_NAME
       isolate_namespace AdminStatisticsDigest
     end
   end
 
-  # libs
-  load File.expand_path('../../discourse-admin-statistics-digest/lib/admin_statistics_digest/report.rb', __FILE__)
+  [
+    '../../discourse-admin-statistics-digest/lib/admin_statistics_digest/report.rb',
+    '../../discourse-admin-statistics-digest/app/mailers/report_mailer.rb',
+    '../../discourse-admin-statistics-digest/app/jobs/admin_statistics_digest.rb'
+  ].each { |path| load File.expand_path(path, __FILE__ )}
 
-  # models
-  load File.expand_path('../../discourse-admin-statistics-digest/app/models/active_responder_category.rb', __FILE__)
-  load File.expand_path('../../discourse-admin-statistics-digest/app/models/email_timeout.rb', __FILE__)
+  require_dependency 'application_controller'
+  class AdminStatisticsDigest::AdminStatisticsDigestController < ::ApplicationController
+    def index
+    end
 
-  # mailers
-  load File.expand_path('../../discourse-admin-statistics-digest/app/mailers/report_mailer.rb', __FILE__)
-
-  # controllers
-  load File.expand_path('../../discourse-admin-statistics-digest/app/controllers/categories_controller.rb', __FILE__)
-  load File.expand_path('../../discourse-admin-statistics-digest/app/controllers/report_scheduler_controller.rb', __FILE__)
-
-  # jobs
-  if Rails.env.development? || (defined?(Rails::Server) || defined?(Unicorn) || defined?(Puma))
-    require 'sidekiq/scheduler'
-
-
-    load File.expand_path('../../discourse-admin-statistics-digest/app/jobs/admin_statistics_digest.rb', __FILE__)
-
-    Sidekiq.configure_server do |config|
-
-      Sidekiq::Scheduler.enabled = true
-      Sidekiq::Scheduler.dynamic = true
-
-      config.on(:startup) do
-        AdminStatisticsDigest.reload_digest_report_schedule
-      end
-
+    def preview
+      # Send the preview for the current month. The month could be added as a parameter.
+      AdminStatisticsDigest::ReportMailer.digest(0).deliver_now
+      render json: { success: true }
     end
   end
 
-
   AdminStatisticsDigest::Engine.routes.draw do
-    root to: 'categories#root'
-    get 'categories', to: 'categories#index'
-    put 'categories/update', to: 'categories#update'
-    get 'report-scheduler/preview', to: 'report_scheduler#preview'
-    get 'report-scheduler/timeout', to: 'report_scheduler#get_timeout'
-    put 'report-scheduler/timeout', to: 'report_scheduler#set_timeout'
+    root to: 'admin_statistics_digest#index', constraints: AdminConstraint.new
+    get 'preview', to: 'admin_statistics_digest#preview', constraints: AdminConstraint.new
   end
 
   Discourse::Application.routes.append do

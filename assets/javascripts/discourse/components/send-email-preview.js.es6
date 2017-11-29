@@ -9,7 +9,7 @@ export default Ember.Component.extend(Config, Helper, {
 
   actions: {
     submit() {
-      ajax(`${this.baseUrl}/report-scheduler/preview.json`)
+      ajax(`${this.baseUrl}/preview.json`)
         .then(() => this._showNotice()).catch(popupAjaxError);
     },
   }
