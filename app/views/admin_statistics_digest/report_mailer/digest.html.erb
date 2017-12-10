@@ -1,1209 +1,228 @@
-<!doctype html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <!-- NAME: ELEGANT -->
-  <!--[if gte mso 15]>
-  <xml>
-    <o:OfficeDocumentSettings>
-      <o:AllowPNG/>
-      <o:PixelsPerInch>96</o:PixelsPerInch>
-    </o:OfficeDocumentSettings>
-  </xml>
-  <![endif]-->
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title><%= @data[:subject] %></title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <title><%= @data[:title] %></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
   <style type="text/css">
-    p{
-      margin:10px 0;
-      padding:0;
-    }
-    table{
-      border-collapse:collapse;
-    }
-    h1,h2,h3,h4,h5,h6{
-      display:block;
-      margin:0;
-      padding:0;
-    }
-    img,a img{
-      border:0;
-      height:auto;
-      outline:none;
-      text-decoration:none;
-    }
-    body,#bodyTable,#bodyCell{
-      height:100%;
-      margin:0;
-      padding:0;
-      width:100%;
-    }
-    #outlook a{
-      padding:0;
-    }
-    img{
-      -ms-interpolation-mode:bicubic;
-    }
-    table{
-      mso-table-lspace:0pt;
-      mso-table-rspace:0pt;
-    }
-    .ReadMsgBody{
-      width:100%;
-    }
-    .ExternalClass{
-      width:100%;
-    }
-    p,a,li,td,blockquote{
-      mso-line-height-rule:exactly;
-    }
-    a[href^=tel],a[href^=sms]{
-      color:inherit;
-      cursor:default;
-      text-decoration:none;
-    }
-    p,a,li,td,body,table,blockquote{
-      -ms-text-size-adjust:100%;
-      -webkit-text-size-adjust:100%;
-    }
-    .ExternalClass,.ExternalClass p,.ExternalClass td,.ExternalClass div,.ExternalClass span,.ExternalClass font{
-      line-height:100%;
-    }
-    a[x-apple-data-detectors]{
-      color:inherit !important;
-      text-decoration:none !important;
-      font-size:inherit !important;
-      font-family:inherit !important;
-      font-weight:inherit !important;
-      line-height:inherit !important;
-    }
-    a.mcnButton{
-      display:block;
-    }
-    .mcnImage{
-      vertical-align:bottom;
-    }
-    .mcnTextContent{
-      word-break:break-word;
-    }
-    .mcnTextContent img{
-      height:auto !important;
-    }
-    .mcnDividerBlock{
-      table-layout:fixed !important;
-    }
-    body,#bodyTable{
-      background-color:#ECEAD4;
-    }
-    #bodyCell{
-      border-top:0;
-    }
-    #templateContainer{
-      border:0;
-    }
-    h1{
-      color:#C52E26 !important;
-      font-family:Georgia;
-      font-size:30px;
-      font-style:normal;
-      font-weight:normal;
-      line-height:125%;
-      letter-spacing:0;
-      text-align:center;
-    }
-    h2{
-      color:#202020 !important;
-      font-family:Georgia;
-      font-size:26px;
-      font-style:normal;
-      font-weight:normal;
-      line-height:125%;
-      letter-spacing:normal;
-      text-align:left;
-    }
-    h3{
-      color:#202020 !important;
-      font-family:Georgia;
-      font-size:14px;
-      font-style:normal;
-      font-weight:normal;
-      line-height:125%;
-      letter-spacing:normal;
-      text-align:center;
-    }
-    h4{
-      color:#C52E26 !important;
-      font-family:Verdana;
-      font-size:14px;
-      font-style:normal;
-      font-weight:normal;
-      line-height:125%;
-      letter-spacing:normal;
-      text-align:left;
-    }
-    #templatePreheader{
-      background-color:#C52E26;
-      border-top:0;
-      border-bottom:0;
-    }
-    .preheaderContainer .mcnTextContent,.preheaderContainer .mcnTextContent p{
-      color:#FFFFFF;
-      font-family:Verdana;
-      font-size:10px;
-      line-height:125%;
-      text-align:left;
-    }
-    .preheaderContainer .mcnTextContent a{
-      color:#FFFFFF;
-      font-weight:normal;
-      text-decoration:underline;
-    }
-    #templateHeader{
-      background-color:#FFFFFF;
-      border-top:0;
-      border-bottom:0;
-    }
-    .headerContainer .mcnTextContent,.headerContainer .mcnTextContent p{
-      color:#404040;
-      font-family:Georgia;
-      font-size:16px;
-      line-height:150%;
-      text-align:center;
-    }
-    .headerContainer .mcnTextContent a{
-      color:#C52E26;
-      font-weight:normal;
-      text-decoration:none;
-    }
-    #templateBody{
-      background-color:#FFFFFF;
-      border-top:0;
-      border-bottom:0;
-    }
-    .bodyContainer .mcnTextContent,.bodyContainer .mcnTextContent p{
-      color:#404040;
-      font-family:Verdana;
-      font-size:14px;
-      line-height:150%;
-      text-align:left;
-    }
-    .bodyContainer .mcnTextContent a{
-      color:#C52E26;
-      font-weight:normal;
-      text-decoration:none;
-    }
-    #templateColumns{
-      background-color:#FFFFFF;
-      border-top:0;
-      border-bottom:0;
-    }
-    .leftColumnContainer .mcnTextContent,.leftColumnContainer .mcnTextContent p{
-      color:#404040;
-      font-family:Verdana;
-      font-size:12px;
-      line-height:150%;
-      text-align:left;
-    }
-    .leftColumnContainer .mcnTextContent a{
-      color:#C52E26;
-      font-weight:normal;
-      text-decoration:none;
-    }
-    .rightColumnContainer .mcnTextContent,.rightColumnContainer .mcnTextContent p{
-      color:#404040;
-      font-family:Verdana;
-      font-size:12px;
-      line-height:150%;
-      text-align:left;
-    }
-    .rightColumnContainer .mcnTextContent a{
-      color:#C52E26;
-      font-weight:normal;
-      text-decoration:none;
-    }
-    #templateFooter{
-      background-color:#ECEAD4;
-      border-top:0;
-      border-bottom:0;
-    }
-    .footerContainer .mcnTextContent,.footerContainer .mcnTextContent p{
-      color:#202020;
-      font-family:Verdana;
-      font-size:10px;
-      line-height:125%;
-      text-align:center;
-    }
-    .footerContainer .mcnTextContent a{
-      color:#C52E26;
-      font-weight:bold;
-      text-decoration:none;
-    }
-    @media only screen and (max-width: 480px){
-      body,table,td,p,a,li,blockquote{
-        -webkit-text-size-adjust:none !important;
+    @media only screen and (min-device-width: 601px) {
+      .content {
+        width: 600px !important;
       }
-
-    }	@media only screen and (max-width: 480px){
-      body{
-        width:100% !important;
-        min-width:100% !important;
-      }
-
-    }	@media only screen and (max-width: 480px){
-      .templateContainer,#templatePreheader,#templateHeader,#templateBody,#templateFooter{
-        max-width:600px !important;
-        width:100% !important;
-      }
-
-    }	@media only screen and (max-width: 480px){
-      .columnsContainer{
-        display:block!important;
-        max-width:600px !important;
-        padding-bottom:18px !important;
-        padding-left:0 !important;
-        width:100%!important;
-      }
-
-    }	@media only screen and (max-width: 480px){
-      .mcnImage{
-        height:auto !important;
-        width:100% !important;
-      }
-
-    }	@media only screen and (max-width: 480px){
-      .mcnCartContainer,.mcnCaptionTopContent,.mcnRecContentContainer,.mcnCaptionBottomContent,.mcnTextContentContainer,.mcnBoxedTextContentContainer,.mcnImageGroupContentContainer,.mcnCaptionLeftTextContentContainer,.mcnCaptionRightTextContentContainer,.mcnCaptionLeftImageContentContainer,.mcnCaptionRightImageContentContainer,.mcnImageCardLeftTextContentContainer,.mcnImageCardRightTextContentContainer{
-        max-width:100% !important;
-        width:100% !important;
-      }
-
-    }	@media only screen and (max-width: 480px){
-      .mcnBoxedTextContentContainer{
-        min-width:100% !important;
-      }
-
-    }	@media only screen and (max-width: 480px){
-      .mcnImageGroupContent{
-        padding:9px !important;
-      }
-
-    }	@media only screen and (max-width: 480px){
-      .mcnCaptionLeftContentOuter .mcnTextContent,.mcnCaptionRightContentOuter .mcnTextContent{
-        padding-top:9px !important;
-      }
-
-    }	@media only screen and (max-width: 480px){
-      .mcnImageCardTopImageContent,.mcnCaptionBlockInner .mcnCaptionTopContent:last-child .mcnTextContent{
-        padding-top:18px !important;
-      }
-
-    }	@media only screen and (max-width: 480px){
-      .mcnImageCardBottomImageContent{
-        padding-bottom:9px !important;
-      }
-
-    }	@media only screen and (max-width: 480px){
-      .mcnImageGroupBlockInner{
-        padding-top:0 !important;
-        padding-bottom:0 !important;
-      }
-
-    }	@media only screen and (max-width: 480px){
-      .mcnImageGroupBlockOuter{
-        padding-top:9px !important;
-        padding-bottom:9px !important;
-      }
-
-    }	@media only screen and (max-width: 480px){
-      .mcnTextContent,.mcnBoxedTextContentColumn{
-        padding-right:18px !important;
-        padding-left:18px !important;
-      }
-
-    }	@media only screen and (max-width: 480px){
-      .mcnImageCardLeftImageContent,.mcnImageCardRightImageContent{
-        padding-right:18px !important;
-        padding-bottom:0 !important;
-        padding-left:18px !important;
-      }
-
-    }	@media only screen and (max-width: 480px){
-      .mcpreview-image-uploader{
-        display:none !important;
-        width:100% !important;
-      }
-
-    }	@media only screen and (max-width: 480px){
-      h1{
-        font-size:24px !important;
-        line-height:125% !important;
-      }
-
-    }	@media only screen and (max-width: 480px){
-      h2{
-        font-size:20px !important;
-        line-height:125% !important;
-      }
-
-    }	@media only screen and (max-width: 480px){
-      h3{
-        font-size:18px !important;
-        line-height:125% !important;
-      }
-
-    }	@media only screen and (max-width: 480px){
-      h4{
-        font-size:16px !important;
-        line-height:125% !important;
-      }
-
-    }	@media only screen and (max-width: 480px){
-      .mcnBoxedTextContentContainer .mcnTextContent,.mcnBoxedTextContentContainer .mcnTextContent p{
-        font-size:18px !important;
-        line-height:125% !important;
-      }
-
-    }	@media only screen and (max-width: 480px){
-      #templatePreheader{
-        display:block !important;
-      }
-
-    }	@media only screen and (max-width: 480px){
-      .preheaderContainer .mcnTextContent,.preheaderContainer .mcnTextContent p{
-        font-size:14px !important;
-        line-height:115% !important;
-      }
-
-    }	@media only screen and (max-width: 480px){
-      .headerContainer .mcnTextContent,.headerContainer .mcnTextContent p{
-        font-size:18px !important;
-        line-height:125% !important;
-      }
-
-    }	@media only screen and (max-width: 480px){
-      .bodyContainer .mcnTextContent,.bodyContainer .mcnTextContent p{
-        font-size:18px !important;
-        line-height:125% !important;
-      }
-
-    }	@media only screen and (max-width: 480px){
-      .footerContainer .mcnTextContent,.footerContainer .mcnTextContent p{
-        font-size:14px !important;
-        line-height:115% !important;
-      }
-
     }
-    .li-group:after {
-      display: table;
-      clear: both;
-      content: "";
-    }
-  </style></head>
-<body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0" style="height: 100%;margin: 0;padding: 0;width: 100%;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #ECEAD4;">
-<center>
-  <table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;height: 100%;margin: 0;padding: 0;width: 100%;background-color: #ECEAD4;">
-    <tr>
-      <td align="center" valign="top" id="bodyCell" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;height: 100%;margin: 0;padding: 0;width: 100%;border-top: 0;">
-        <!-- BEGIN TEMPLATE // -->
-        <table border="0" cellpadding="0" cellspacing="0" width="600" class="templateContainer" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-          <tr>
-            <td align="center" valign="top" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-              <!-- BEGIN PREHEADER // -->
-              <table border="0" cellpadding="0" cellspacing="0" width="600" id="templatePreheader" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #C52E26;border-top: 0;border-bottom: 0;">
-                <tr>
-                  <td valign="top" class="preheaderContainer" style="padding-top: 9px;padding-bottom: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                    <tbody class="mcnTextBlockOuter">
-                    <tr>
-                      <td valign="top" class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                        <!--[if mso]>
-                        <table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
-                          <tr>
-                        <![endif]-->
-
-                        <!--[if mso]>
-                        <td valign="top" width="390" style="width:390px;">
-                        <![endif]-->
-                        <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 390px;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
-                          <tbody><tr>
-
-                            <td valign="top" class="mcnTextContent" style="padding-top: 0;padding-left: 18px;padding-bottom: 9px;padding-right: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #FFFFFF;font-family: Verdana;font-size: 10px;line-height: 125%;text-align: left;">
-                              <%= @data[:title] %>
-                            </td>
-                          </tr>
-                          </tbody></table>
-                        <!--[if mso]>
-                        </td>
-                        <![endif]-->
-
-                        <!--[if mso]>
-                        <td valign="top" width="210" style="width:210px;">
-                        <![endif]-->
-                        <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 210px;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
-                          <tbody><tr>
-
-                            <td valign="top" class="mcnTextContent" style="padding-top: 0;padding-left: 18px;padding-bottom: 9px;padding-right: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #FFFFFF;font-family: Verdana;font-size: 10px;line-height: 125%;text-align: left;">
-
-
-                            </td>
-                          </tr>
-                          </tbody></table>
-                        <!--[if mso]>
-                        </td>
-                        <![endif]-->
-
-                        <!--[if mso]>
-                        </tr>
-                        </table>
-                        <![endif]-->
-                      </td>
-                    </tr>
-                    </tbody>
-                  </table></td>
-                </tr>
-              </table>
-              <!-- // END PREHEADER -->
-            </td>
-          </tr>
-          <tr>
-            <td align="center" valign="top" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-              <!-- BEGIN HEADER // -->
-              <table border="0" cellpadding="0" cellspacing="0" width="600" id="templateHeader" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #FFFFFF;border-top: 0;border-bottom: 0;">
-                <tr>
-                  <td valign="top" class="headerContainer" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnImageBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                    <tbody class="mcnImageBlockOuter">
-                    <tr>
-                      <td valign="top" style="padding: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" class="mcnImageBlockInner">
-                        <table align="left" width="100%" border="0" cellpadding="0" cellspacing="0" class="mcnImageContentContainer" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                          <tbody><tr>
-                            <td class="mcnImageContent" valign="top" style="padding-right: 9px;padding-left: 9px;padding-top: 0;padding-bottom: 0;text-align: center;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
-
-                              <img align="center" alt="" src="<%= @data['logo_url'] %>" style="max-width: 500px;padding-bottom: 0;display: inline !important;vertical-align: bottom;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;" class="mcnImage">
-
-
-                            </td>
-                          </tr>
-                          </tbody></table>
-                      </td>
-                    </tr>
-                    </tbody>
-                  </table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnDividerBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;table-layout: fixed !important;">
-                    <tbody class="mcnDividerBlockOuter">
-                    <tr>
-                      <td class="mcnDividerBlockInner" style="min-width: 100%;padding: 20px 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                        <table class="mcnDividerContent" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width: 100%;border-top-width: 3px;border-top-style: groove;border-top-color: #FFD6D6;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                          <tbody><tr>
-                            <td style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                              <span></span>
-                            </td>
-                          </tr>
-                          </tbody></table>
-                        <!--
-                                        <td class="mcnDividerBlockInner" style="padding: 18px;">
-                                        <hr class="mcnDividerContent" style="border-bottom-color:none; border-left-color:none; border-right-color:none; border-bottom-width:0; border-left-width:0; border-right-width:0; margin-top:0; margin-right:0; margin-bottom:0; margin-left:0;" />
-                        -->
-                      </td>
-                    </tr>
-                    </tbody>
-                  </table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                    <tbody class="mcnTextBlockOuter">
-                    <tr>
-                      <td valign="top" class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                        <!--[if mso]>
-                        <table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
-                          <tr>
-                        <![endif]-->
-
-                        <!--[if mso]>
-                        <td valign="top" width="600" style="width:600px;">
-                        <![endif]-->
-                        <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
-                          <tbody><tr>
-
-                            <td valign="top" class="mcnTextContent" style="padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #404040;font-family: Georgia;font-size: 16px;line-height: 150%;text-align: center;">
-
-                              <h1 style="display: block;margin: 0;padding: 0;font-family: Georgia;font-size: 30px;font-style: normal;font-weight: normal;line-height: 125%;letter-spacing: 0;text-align: center;color: #C52E26 !important;">Admin Statistic Report</h1>
-                              <%= @report_date %>
-                            </td>
-                          </tr>
-                          </tbody></table>
-                        <!--[if mso]>
-                        </td>
-                        <![endif]-->
-
-                        <!--[if mso]>
-                        </tr>
-                        </table>
-                        <![endif]-->
-                      </td>
-                    </tr>
-                    </tbody>
-                  </table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnDividerBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;table-layout: fixed !important;">
-                    <tbody class="mcnDividerBlockOuter">
-                    <tr>
-                      <td class="mcnDividerBlockInner" style="min-width: 100%;padding: 20px 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                        <table class="mcnDividerContent" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width: 100%;border-top-width: 3px;border-top-style: groove;border-top-color: #FFD6D6;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                          <tbody><tr>
-                            <td style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                              <span></span>
-                            </td>
-                          </tr>
-                          </tbody></table>
-                        <!--
-                                        <td class="mcnDividerBlockInner" style="padding: 18px;">
-                                        <hr class="mcnDividerContent" style="border-bottom-color:none; border-left-color:none; border-right-color:none; border-bottom-width:0; border-left-width:0; border-right-width:0; margin-top:0; margin-right:0; margin-bottom:0; margin-left:0;" />
-                        -->
-                      </td>
-                    </tr>
-                    </tbody>
-                  </table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                    <tbody class="mcnTextBlockOuter">
-                    <tr>
-                      <td valign="top" class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                        <!--[if mso]>
-                        <table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
-                          <tr>
-                        <![endif]-->
-
-                        <!--[if mso]>
-                        <td valign="top" width="600" style="width:600px;">
-                        <![endif]-->
-                        <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
-                          <tbody><tr>
-
-                            <td valign="top" class="mcnTextContent" style="padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #404040;font-family: Georgia;font-size: 16px;line-height: 150%;text-align: center;">
-
-                              <h3 style="display: block;margin: 0;padding: 0;font-family: Georgia;font-size: 14px;font-style: normal;font-weight: normal;line-height: 125%;letter-spacing: normal;text-align: center;color: #202020 !important;"><span style="font-size:18px">Most Active New Registered Users</span></h3>
-
-                            </td>
-                          </tr>
-                          </tbody></table>
-                        <!--[if mso]>
-                        </td>
-                        <![endif]-->
-
-                        <!--[if mso]>
-                        </tr>
-                        </table>
-                        <![endif]-->
-                      </td>
-                    </tr>
-                    </tbody>
-                  </table></td>
-                </tr>
-              </table>
-              <!-- // END HEADER -->
-            </td>
-          </tr>
-          <tr>
-            <td align="center" valign="top" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-              <!-- BEGIN BODY // -->
-              <table border="0" cellpadding="0" cellspacing="0" width="600" id="templateBody" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #FFFFFF;border-top: 0;border-bottom: 0;">
-                <tr>
-                  <td valign="top" class="bodyContainer" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                    <tbody class="mcnTextBlockOuter">
-                    <tr>
-                      <td valign="top" class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                        <!--[if mso]>
-                        <table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
-                          <tr>
-                        <![endif]-->
-
-                        <!--[if mso]>
-                        <td valign="top" width="600" style="width:600px;">
-                        <![endif]-->
-                        <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
-                          <tbody><tr>
-
-                            <td valign="top" class="mcnTextContent" style="padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #404040;font-family: Verdana;font-size: 14px;line-height: 150%;text-align: left;">
-
-                              <ol>
-                                <% if @data[:top_new_registered_users].present? %>
-                                    <%- @data[:top_new_registered_users].each do |user| %>
-                                        <li class="li-group" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                                          <h3 style="text-align: left;display: block;margin: 0;padding: 0;font-family: Georgia;font-size: 14px;font-style: normal;font-weight: normal;line-height: 125%;letter-spacing: normal;color: #202020 !important;">
-                                        <span style="font-size:14px">
-                                          <a href="<%= user_url(user['username'], host: Discourse.base_url) %>" target="_blank" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #C52E26;font-weight: normal;text-decoration: none;">
-                                            <%= user['username'] %>
-                                          </a> -&nbsp;<%= user['name'] %>
-                                          <span style="float:right">
-                                            <%= user['topics'] %> Topics, <%= user['replies'] %> Replies</span>
-                                        </span>
-                                          </h3>
-                                        </li>
-                                    <% end %>
-                                <% else %>
-                                    <li>No data yet</li>
-                                <% end %>
-                              </ol>
-
-                            </td>
-                          </tr>
-                          </tbody></table>
-                        <!--[if mso]>
-                        </td>
-                        <![endif]-->
-
-                        <!--[if mso]>
-                        </tr>
-                        </table>
-                        <![endif]-->
-                      </td>
-                    </tr>
-                    </tbody>
-                  </table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnDividerBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;table-layout: fixed !important;">
-                    <tbody class="mcnDividerBlockOuter">
-                    <tr>
-                      <td class="mcnDividerBlockInner" style="min-width: 100%;padding: 20px 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                        <table class="mcnDividerContent" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width: 100%;border-top-width: 3px;border-top-style: groove;border-top-color: #FFD6D6;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                          <tbody><tr>
-                            <td style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                              <span></span>
-                            </td>
-                          </tr>
-                          </tbody></table>
-                        <!--
-                                        <td class="mcnDividerBlockInner" style="padding: 18px;">
-                                        <hr class="mcnDividerContent" style="border-bottom-color:none; border-left-color:none; border-right-color:none; border-bottom-width:0; border-left-width:0; border-right-width:0; margin-top:0; margin-right:0; margin-bottom:0; margin-left:0;" />
-                        -->
-                      </td>
-                    </tr>
-                    </tbody>
-                  </table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                    <tbody class="mcnTextBlockOuter">
-                    <tr>
-                      <td valign="top" class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                        <!--[if mso]>
-                        <table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
-                          <tr>
-                        <![endif]-->
-
-                        <!--[if mso]>
-                        <td valign="top" width="600" style="width:600px;">
-                        <![endif]-->
-                        <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
-                          <tbody><tr>
-
-                            <td valign="top" class="mcnTextContent" style="padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #404040;font-family: Verdana;font-size: 14px;line-height: 150%;text-align: left;">
-
-                              <h3 style="display: block;margin: 0;padding: 0;font-family: Georgia;font-size: 14px;font-style: normal;font-weight: normal;line-height: 125%;letter-spacing: normal;text-align: center;color: #202020 !important;"><span style="font-size:18px">Top Non-Staff Users</span></h3>
-
-                            </td>
-                          </tr>
-                          </tbody></table>
-                        <!--[if mso]>
-                        </td>
-                        <![endif]-->
-
-                        <!--[if mso]>
-                        </tr>
-                        </table>
-                        <![endif]-->
-                      </td>
-                    </tr>
-                    </tbody>
-                  </table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                    <tbody class="mcnTextBlockOuter">
-                    <tr>
-                      <td valign="top" class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                        <!--[if mso]>
-                        <table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
-                          <tr>
-                        <![endif]-->
-
-                        <!--[if mso]>
-                        <td valign="top" width="600" style="width:600px;">
-                        <![endif]-->
-                        <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
-                          <tbody><tr>
-
-                            <td valign="top" class="mcnTextContent" style="padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #404040;font-family: Verdana;font-size: 14px;line-height: 150%;text-align: left;">
-
-                              <ol>
-                                <% if @data[:top_non_staff_users].present? %>
-                                    <%- @data[:top_non_staff_users].each do |user| %>
-                                        <li class="li-group" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                                          <h3 style="text-align: left;display: block;margin: 0;padding: 0;font-family: Georgia;font-size: 14px;font-style: normal;font-weight: normal;line-height: 125%;letter-spacing: normal;color: #202020 !important;">
-                                            <a href="<%= user_url(user['username'], host: Discourse.base_url) %>" target="_blank" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #C52E26;font-weight: normal;text-decoration: none;">
-                                              <%= user['username'] %>
-                                            </a>&nbsp;- <%= user['name'] %>
-                                            <span style="float:right">
-                                      <%= user['topics'] %>&nbsp;Topics, <%= user['replies'] %> Replies
-                                    </span>
-                                          </h3>
-                                        </li>
-                                    <% end %>
-                                <% else %>
-                                    <li>No data yet</li>
-                                <% end %>
-                              </ol>
-
-                            </td>
-                          </tr>
-                          </tbody></table>
-                        <!--[if mso]>
-                        </td>
-                        <![endif]-->
-
-                        <!--[if mso]>
-                        </tr>
-                        </table>
-                        <![endif]-->
-                      </td>
-                    </tr>
-                    </tbody>
-                  </table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnDividerBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;table-layout: fixed !important;">
-                    <tbody class="mcnDividerBlockOuter">
-                    <tr>
-                      <td class="mcnDividerBlockInner" style="min-width: 100%;padding: 20px 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                        <table class="mcnDividerContent" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width: 100%;border-top-width: 3px;border-top-style: groove;border-top-color: #FFD6D6;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                          <tbody><tr>
-                            <td style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                              <span></span>
-                            </td>
-                          </tr>
-                          </tbody></table>
-                        <!--
-                                        <td class="mcnDividerBlockInner" style="padding: 18px;">
-                                        <hr class="mcnDividerContent" style="border-bottom-color:none; border-left-color:none; border-right-color:none; border-bottom-width:0; border-left-width:0; border-right-width:0; margin-top:0; margin-right:0; margin-bottom:0; margin-left:0;" />
-                        -->
-                      </td>
-                    </tr>
-                    </tbody>
-                  </table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                    <tbody class="mcnTextBlockOuter">
-                    <tr>
-                      <td valign="top" class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                        <!--[if mso]>
-                        <table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
-                          <tr>
-                        <![endif]-->
-
-                        <!--[if mso]>
-                        <td valign="top" width="600" style="width:600px;">
-                        <![endif]-->
-                        <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
-                          <tbody><tr>
-
-                            <td valign="top" class="mcnTextContent" style="padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #404040;font-family: Verdana;font-size: 14px;line-height: 150%;text-align: left;">
-
-                              <h3 style="display: block;margin: 0;padding: 0;font-family: Georgia;font-size: 14px;font-style: normal;font-weight: normal;line-height: 125%;letter-spacing: normal;text-align: center;color: #202020 !important;"><span style="font-size:18px">Demoted Regulars This Month</span></h3>
-
-                            </td>
-                          </tr>
-                          </tbody></table>
-                        <!--[if mso]>
-                        </td>
-                        <![endif]-->
-
-                        <!--[if mso]>
-                        </tr>
-                        </table>
-                        <![endif]-->
-                      </td>
-                    </tr>
-                    </tbody>
-                  </table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                    <tbody class="mcnTextBlockOuter">
-                    <tr>
-                      <td valign="top" class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                        <!--[if mso]>
-                        <table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
-                          <tr>
-                        <![endif]-->
-
-                        <!--[if mso]>
-                        <td valign="top" width="600" style="width:600px;">
-                        <![endif]-->
-                        <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
-                          <tbody><tr>
-
-                            <td valign="top" class="mcnTextContent" style="padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #404040;font-family: Verdana;font-size: 14px;line-height: 150%;text-align: left;">
-
-                              <ol>
-                                <% if @data[:demoted_regulars_this_month].present? %>
-                                    <%- @data[:demoted_regulars_this_month].each do |user| %>
-                                        <li class="li-group" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                                          <h3 style="text-align: left;display: block;margin: 0;padding: 0;font-family: Georgia;font-size: 14px;font-style: normal;font-weight: normal;line-height: 125%;letter-spacing: normal;color: #202020 !important;">
-                                            <a href="<%= user_url(user['username'], host: Discourse.base_url) %>" target="_blank" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #C52E26;font-weight: normal;text-decoration: none;">
-                                              <%= user['username'] %>
-                                            </a>&nbsp;- <%= user['name'] %>
-                                          </h3>
-                                        </li>
-                                    <% end %>
-                                <% else %>
-                                    <li>No data yet</li>
-                                <% end %>
-                              </ol>
-
-                            </td>
-                          </tr>
-                          </tbody></table>
-                        <!--[if mso]>
-                        </td>
-                        <![endif]-->
-
-                        <!--[if mso]>
-                        </tr>
-                        </table>
-                        <![endif]-->
-                      </td>
-                    </tr>
-                    </tbody>
-                  </table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnDividerBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;table-layout: fixed !important;">
-                    <tbody class="mcnDividerBlockOuter">
-                    <tr>
-                      <td class="mcnDividerBlockInner" style="min-width: 100%;padding: 20px 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                        <table class="mcnDividerContent" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width: 100%;border-top-width: 3px;border-top-style: groove;border-top-color: #FFD6D6;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                          <tbody><tr>
-                            <td style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                              <span></span>
-                            </td>
-                          </tr>
-                          </tbody></table>
-                        <!--
-                                        <td class="mcnDividerBlockInner" style="padding: 18px;">
-                                        <hr class="mcnDividerContent" style="border-bottom-color:none; border-left-color:none; border-right-color:none; border-bottom-width:0; border-left-width:0; border-right-width:0; margin-top:0; margin-right:0; margin-bottom:0; margin-left:0;" />
-                        -->
-                      </td>
-                    </tr>
-                    </tbody>
-                  </table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                    <tbody class="mcnTextBlockOuter">
-                    <tr>
-                      <td valign="top" class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                        <!--[if mso]>
-                        <table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
-                          <tr>
-                        <![endif]-->
-
-                        <!--[if mso]>
-                        <td valign="top" width="600" style="width:600px;">
-                        <![endif]-->
-                        <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
-                          <tbody><tr>
-
-                            <td valign="top" class="mcnTextContent" style="padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #404040;font-family: Verdana;font-size: 14px;line-height: 150%;text-align: left;">
-
-                              <h3 style="display: block;margin: 0;padding: 0;font-family: Georgia;font-size: 14px;font-style: normal;font-weight: normal;line-height: 125%;letter-spacing: normal;text-align: center;color: #202020 !important;"><span style="font-size:18px">Top Active Responders</span></h3>
-
-                            </td>
-                          </tr>
-                          </tbody></table>
-                        <!--[if mso]>
-                        </td>
-                        <![endif]-->
-
-                        <!--[if mso]>
-                        </tr>
-                        </table>
-                        <![endif]-->
-                      </td>
-                    </tr>
-                    </tbody>
-                  </table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                    <tbody class="mcnTextBlockOuter">
-                    <tr>
-                      <td valign="top" class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                        <!--[if mso]>
-                        <table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
-                          <tr>
-                        <![endif]-->
-
-                        <!--[if mso]>
-                        <td valign="top" width="600" style="width:600px;">
-                        <![endif]-->
-                        <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
-                          <tbody><tr>
-
-                            <% if @data[:active_responders].present? %>
-                                <td valign="top" class="mcnTextContent" style="padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #404040;font-family: Verdana;font-size: 14px;line-height: 150%;text-align: left;">
-
-                                  <%- @data[:active_responders].each do |category| %>
-                                      <h4 class="null" style="display: block;margin: 0;padding: 0;font-family: Verdana;font-size: 14px;font-style: normal;font-weight: normal;line-height: 125%;letter-spacing: normal;text-align: left;color: #C52E26 !important;">
-                                        <strong>
-                                          <a href="https://meta.discourse.org/c/support" target="_blank" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #C52E26;font-weight: normal;text-decoration: none;">#<%= category['category_name'] %></a>
-                                        </strong>
-                                      </h4>
-                                        <% if category['responders'].present? %>
-                                          <ol>
-                                            <%- category['responders'].each do |user| %>
-                                                <li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                                                  <h3 style="text-align: left;display: block;margin: 0;padding: 0;font-family: Georgia;font-size: 14px;font-style: normal;font-weight: normal;line-height: 125%;letter-spacing: normal;color: #202020 !important;">
-                                                    <a href="<%= "#{Discourse.base_url}/users/#{user['username']}" %>" target="_blank" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #C52E26;font-weight: normal;text-decoration: none;">
-                                                      <%= user['username'] %>
-                                                    </a>
-                                                    &nbsp;- <%= user['name'] %>
-                                                  </h3>
-                                                </li>
-                                            <% end %>
-                                          </ol>
-                                        <% else %>
-                                          <ul>
-                                            <li>No data yet</li>
-                                          </ul>
-                                        <% end %>
-                                  <% end %>
-
-                                </td>
-                            <% else %>
-                                <td valign="top" class="mcnTextContent" style="padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #404040;font-family: Verdana;font-size: 14px;line-height: 150%;text-align: left;">No data yet</td>
-                            <% end %>
-                          </tr>
-                          </tbody></table>
-                        <!--[if mso]>
-                        </td>
-                        <![endif]-->
-
-                        <!--[if mso]>
-                        </tr>
-                        </table>
-                        <![endif]-->
-                      </td>
-                    </tr>
-                    </tbody>
-                  </table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnDividerBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;table-layout: fixed !important;">
-                    <tbody class="mcnDividerBlockOuter">
-                    <tr>
-                      <td class="mcnDividerBlockInner" style="min-width: 100%;padding: 20px 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                        <table class="mcnDividerContent" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width: 100%;border-top-width: 3px;border-top-style: groove;border-top-color: #FFD6D6;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                          <tbody><tr>
-                            <td style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                              <span></span>
-                            </td>
-                          </tr>
-                          </tbody></table>
-                        <!--
-                                        <td class="mcnDividerBlockInner" style="padding: 18px;">
-                                        <hr class="mcnDividerContent" style="border-bottom-color:none; border-left-color:none; border-right-color:none; border-bottom-width:0; border-left-width:0; border-right-width:0; margin-top:0; margin-right:0; margin-bottom:0; margin-left:0;" />
-                        -->
-                      </td>
-                    </tr>
-                    </tbody>
-                  </table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                    <tbody class="mcnTextBlockOuter">
-                    <tr>
-                      <td valign="top" class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                        <!--[if mso]>
-                        <table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
-                          <tr>
-                        <![endif]-->
-
-                        <!--[if mso]>
-                        <td valign="top" width="600" style="width:600px;">
-                        <![endif]-->
-                        <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
-                          <tbody><tr>
-
-                            <td valign="top" class="mcnTextContent" style="padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #404040;font-family: Verdana;font-size: 14px;line-height: 150%;text-align: left;">
-
-                              <h3 style="display: block;margin: 0;padding: 0;font-family: Georgia;font-size: 14px;font-style: normal;font-weight: normal;line-height: 125%;letter-spacing: normal;text-align: center;color: #202020 !important;"><span style="font-size:18px">Most Popular Topics &amp; Posts This Month</span></h3>
-
-                            </td>
-                          </tr>
-                          </tbody></table>
-                        <!--[if mso]>
-                        </td>
-                        <![endif]-->
-
-                        <!--[if mso]>
-                        </tr>
-                        </table>
-                        <![endif]-->
-                      </td>
-                    </tr>
-                    </tbody>
-                  </table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                    <tbody class="mcnTextBlockOuter">
-                    <tr>
-                      <td valign="top" class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                        <!--[if mso]>
-                        <table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
-                          <tr>
-                        <![endif]-->
-
-                        <!--[if mso]>
-                        <td valign="top" width="600" style="width:600px;">
-                        <![endif]-->
-                        <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
-                          <tbody><tr>
-
-                            <td valign="top" class="mcnTextContent" style="padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #404040;font-family: Verdana;font-size: 14px;line-height: 150%;text-align: left;">
-
-                              <h4 class="null" style="display: block;margin: 0;padding: 0;font-family: Verdana;font-size: 14px;font-style: normal;font-weight: normal;line-height: 125%;letter-spacing: normal;text-align: left;color: #C52E26 !important;"><strong>Popular Posts</strong></h4>
-                              <style type="text/css">.bullet {
-                                width:10px;
-                                height:10px;
-                                background-color:#CEA9A9;
-                                margin-right: 3px;
-                                margin-left: 3px;
-                                display:inline-flex;
-                                align-items:baseline;
-                                line-height:0.5
-                              }
-                              .bullet:before {
-                                content: "\a0";
-                              }
-                              </style>
-                              <ul>
-                                <% if @data[:popular_posts].present? %>
-                                    <%- @data[:popular_posts].each do |p| %>
-                                        <li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                                          <a href="<%= "#{Discourse.base_url}/t/#{p['topic_slug']}/#{p['topic_id']}/#{p['id']}" %>" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #C52E26;font-weight: normal;text-decoration: none;">
-                                            <%= p['topic_title'] %>
-                                          </a>
-                                          <span class="bullet" style="width: 10px;height: 10px;background-color: #CEA9A9;margin-right: 3px;margin-left: 3px;display: inline-flex;align-items: baseline;line-height: 0.5;">&nbsp;</span>
-                                          <%= p['category_name'] %>
-                                        </li>
-                                    <% end %>
-                                <% else %>
-                                    <li>No data yet</li>
-                                <% end %>
-                              </ul>
-
-                              <h4 class="null" style="display: block;margin: 0;padding: 0;font-family: Verdana;font-size: 14px;font-style: normal;font-weight: normal;line-height: 125%;letter-spacing: normal;text-align: left;color: #C52E26 !important;"><strong>Popular Topics</strong></h4>
-
-                              <ul>
-                                <% if @data[:popular_topics].present? %>
-                                    <%- @data[:popular_topics].each do |t| %>
-                                        <li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                                          <a href="<%= "#{Discourse.base_url}/t/#{t['slug']}/#{t['topic_id']}" %>" target="_blank" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #C52E26;font-weight: normal;text-decoration: none;">
-                                            <%= t['title'] %>
-                                          </a>
-                                          <span class="bullet" style="width: 10px;height: 10px;background-color: #CEA9A9;margin-right: 3px;margin-left: 3px;display: inline-flex;align-items: baseline;line-height: 0.5;">&nbsp;</span>
-                                          <%= t['category'] %>
-                                        </li>
-                                    <% end %>
-                                <% else %>
-                                    <li>No data yet</li>
-                                <% end %>
-                              </ul>
-
-                              <h4 class="null" style="display: block;margin: 0;padding: 0;font-family: Verdana;font-size: 14px;font-style: normal;font-weight: normal;line-height: 125%;letter-spacing: normal;text-align: left;color: #C52E26 !important;"><strong>Most Liked Posts</strong></h4>
-
-                              <ul>
-                                <% if @data[:most_liked_posts].present? %>
-                                    <%- @data[:most_liked_posts].each do |p| %>
-                                        <li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                                          <a href="<%= "#{Discourse.base_url}/t/#{p['topic_slug']}/#{p['topic_id']}/#{p['id']}" %>" target="_blank" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #C52E26;font-weight: normal;text-decoration: none;">
-                                            <strong>
-                                              <%= p['topic_title'] %>
-                                            </strong>
-                                          </a> <span class="bullet" style="width: 10px;height: 10px;background-color: #CEA9A9;margin-right: 3px;margin-left: 3px;display: inline-flex;align-items: baseline;line-height: 0.5;">&nbsp;</span><%= p['category'] %>
-                                          <blockquote style="border-left: 5px solid #e0e0e0;padding-left: 10px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                                            <%= p['content'].to_s.html_safe %>
-                                          </blockquote>
-                                        </li>
-                                    <% end %>
-                                <% else %>
-                                    <li>No data yet</li>
-                                <% end %>
-                              </ul>
-
-                              <h4 class="null" style="display: block;margin: 0;padding: 0;font-family: Verdana;font-size: 14px;font-style: normal;font-weight: normal;line-height: 125%;letter-spacing: normal;text-align: left;color: #C52E26 !important;"><strong>Most Replied Topics</strong></h4>
-
-                              <ul>
-                                <% if @data[:most_replied_topics].present? %>
-                                    <% @data[:most_replied_topics].each do |t| %>
-                                        <li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                                          <a href="<%= "#{Discourse.base_url}/t/#{t['slug']}/#{t['id']}" %>" target="_blank" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #C52E26;font-weight: normal;text-decoration: none;">
-                                            <%= t['title'] %>
-                                          </a>
-                                          <span class="bullet" style="width: 10px;height: 10px;background-color: #CEA9A9;margin-right: 3px;margin-left: 3px;display: inline-flex;align-items: baseline;line-height: 0.5;">&nbsp;</span><%= t['category'] %>
-                                        </li>
-                                    <% end %>
-                                <% else %>
-                                    <li>No data yet</li>
-                                <% end %>
-                              </ul>
-                              <br>
-                              <br>
-                              &nbsp;
-                            </td>
-                          </tr>
-                          </tbody></table>
-                        <!--[if mso]>
-                        </td>
-                        <![endif]-->
-
-                        <!--[if mso]>
-                        </tr>
-                        </table>
-                        <![endif]-->
-                      </td>
-                    </tr>
-                    </tbody>
-                  </table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnDividerBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;table-layout: fixed !important;">
-                    <tbody class="mcnDividerBlockOuter">
-                    <tr>
-                      <td class="mcnDividerBlockInner" style="min-width: 100%;padding: 20px 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                        <table class="mcnDividerContent" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width: 100%;border-top-width: 3px;border-top-style: groove;border-top-color: #FFD6D6;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                          <tbody><tr>
-                            <td style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                              <span></span>
-                            </td>
-                          </tr>
-                          </tbody></table>
-                        <!--
-                                        <td class="mcnDividerBlockInner" style="padding: 18px;">
-                                        <hr class="mcnDividerContent" style="border-bottom-color:none; border-left-color:none; border-right-color:none; border-bottom-width:0; border-left-width:0; border-right-width:0; margin-top:0; margin-right:0; margin-bottom:0; margin-left:0;" />
-                        -->
-                      </td>
-                    </tr>
-                    </tbody>
-                  </table></td>
-                </tr>
-              </table>
-              <!-- // END BODY -->
-            </td>
-          </tr>
-          <tr>
-            <td align="center" valign="top" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-              <!-- BEGIN COLUMNS // -->
-              <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateColumns" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #FFFFFF;border-top: 0;border-bottom: 0;">
-                <tr>
-                  <td align="center" valign="top" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                    <table border="0" cellpadding="0" cellspacing="0" width="600" class="templateContainer" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+  </style>
+
+</head>
+<body dir="<%= dir_for_locale %>" style="margin:0;padding:0;min-width:100% !important;background-color:#ffffff;font-family:Helvetica,Arial,sans-serif !important;">
+
+<!-- outer table -->
+<table dir="<%= dir_for_locale %>" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #ffffff;border-collapse:collapse;font-family:Helvetica,Arial,sans-serif !important;">
+  <tr>
+    <td>
+      <!-- inner table (with conditional table for Outlook) -->
+      <!-- inner table -->
+      <!--[if (gte mso 9)|(IE)]>
+            <table dir="<%= dir_for_locale %>" width="600" align="center" cellpadding="0" cellspacing="0" border="0"
+                   style="font-family:Helvetica,Arial,sans-serif !important;border-collapse:collapse;margin:0 auto;">
+              <tr>
+                <td>
+            <![endif]-->
+      <table dir="<%= dir_for_locale %>" class="content" align="center" border="0" cellpadding="0" cellspacing="0" style="font-family:Helvetica,Arial,sans-serif !important;margin:0 auto;border-collapse:collapse;width:100%;max-width:600px;background-color:<%= bg_color -%>">
+        <!-- email content starts here -->
+
+        <!-- logo row -->
+        <tr>
+          <td style="padding:24px 0 24px 0;background-color:<%= header_bgcolor -%>;color:<%= header_color -%>;font-size:22px;font-weight:400;font-family:Helvetica,Arial,sans-serif !important;text-align:center;margin:0 auto;">
+            <a href="<%= Discourse.base_url %>" style="color:<%= header_color -%>;font-size:22px;text-decoration:none;">
+              <%- if logo_url.blank? %>
+                <strong><%= SiteSetting.title %></strong>
+              <%- else %>
+                <img src="<%= logo_url %>" width="200" style="clear:both;display:block;width:200px;margin:auto;max-width:100%;outline:0;text-decoration:none;" alt="<%= SiteSetting.title %>">
+              <%- end %>
+            </a>
+          </td>
+        </tr><!-- end of logo row -->
+
+        <!-- header title row -->
+        <tr>
+          <td style="padding:24px 0 12px 0;background-color:<%= highlight_bgcolor -%>;color:<%= highlight_color -%>;font-size:22px;font-weight:400;font-family:Helvetica,Arial,sans-serif !important;text-align: center">
+            <strong><%= @data[:title] -%></strong>
+          </td>
+        </tr><!-- end of header title row -->
+
+        <!-- start of header metadata row -->
+        <tr>
+          <td style="font-family:Helvetica,Arial,sans-serif !important;background-color:<%= highlight_bgcolor -%>;color:<%= highlight_color -%>;">
+            <!-- 1 row of 3 cells each containing a 2 row table -->
+            <table dir="<%= dir_for_locale %>" border="0" cellpadding="0" cellspacing="0" width="100%" style="font-family:Helvetica,Arial,sans-serif !important;">
+              <tr>
+                <!-- loop through header_metadata array -->
+                <%- @data[:header_metadata].each do |data| -%>
+                  <td>
+                    <table dir="<%= dir_for_locale %>" border="0" cellpadding="0" cellspacing="0" width="100%" style="font-family:Helvetica,Arial,sans-serif !important;border-collapse:collapse;">
                       <tr>
-                        <td align="left" valign="top" class="columnsContainer" width="50%" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                          <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" class="templateColumn" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                            <tr>
-                              <td valign="top" class="leftColumnContainer" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"></td>
-                            </tr>
-                          </table>
+                        <td style="padding: 12px 0 12px 0;background-color:<%= highlight_bgcolor -%>;color:<%= highlight_color -%>;font-weight:400;font-size:36px;font-family:Helvetica,Arial,sans-serif !important;text-align:center;">
+                          <strong><%= data[:value] -%></strong>
                         </td>
-                        <td align="left" valign="top" class="columnsContainer" width="50%" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                          <table align="right" border="0" cellpadding="0" cellspacing="0" width="100%" class="templateColumn" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                            <tr>
-                              <td valign="top" class="rightColumnContainer" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"></td>
-                            </tr>
-                          </table>
+                      </tr>
+                      <tr>
+                        <td style="background-color:<%= highlight_bgcolor -%>;color:<%= highlight_color -%>;font-size:14px;font-weight:400;font-family:Helvetica,Arial,sans-serif !important;text-align:center;">
+                          <strong><%= t data[:key] -%></strong>
                         </td>
                       </tr>
                     </table>
                   </td>
-                </tr>
-              </table>
-              <!-- // END COLUMNS -->
-            </td>
-          </tr>
+                <%- end -%>
+              </tr>
+            </table>
+          </td>
+        </tr><!-- end of header metadata row -->
+
+        <!-- horizontal spacer row (blue) --> <!-- font size sets height -->
+        <tr>
+          <td style="background-color:<%= highlight_bgcolor -%>;font-size:24px;font-weight:400;font-family:Helvetica,Arial,sans-serif !important;text-align:center;" width="100%">
+            &nbsp;&nbsp;
+          </td>
+        </tr><!-- end of horizontal spacer row -->
+
+        <!-- data loop -->
+        <% @data[:data_array].each_with_index do |obj, outer_count| -%>
+
+          <!-- title section -->
           <tr>
-            <td align="center" valign="top" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-              <!-- BEGIN FOOTER // -->
-              <table border="0" cellpadding="0" cellspacing="0" width="600" id="templateFooter" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #ECEAD4;border-top: 0;border-bottom: 0;">
+            <td style="background-color:<%= body_bgcolor -%>; color:<%= body_color -%>;font-size:22px;font-weight:400;font-family:Helvetica,Arial,sans-serif !important;">
+              <table dir="<%= dir_for_locale %>" border="0" cellpadding="0" cellspacing="0" width="100%" style="font-size:2px;font-weight:400;font-family:Helvetica,Arial,sans-serif !important;border-collapse:collapse;">
                 <tr>
-                  <td valign="top" class="footerContainer" style="padding-top: 9px;padding-bottom: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"></td>
+                  <td class="highlight-side-spacer" width="5%" style="background-color:<%= spacer_color outer_count -%>;">
+                    &nbsp;
+                  </td>
+                  <td style="padding: 20px 0 5px 0; background-color:<%= body_bgcolor -%>; color:<%= body_color -%>;font-size:22px;font-weight:400;font-family:Helvetica,Arial,sans-serif !important;text-align: center">
+                    <strong><%= t obj[:title_key] -%></strong>
+                  </td>
+                  <td class="highlight-side-spacer" width="5%" style="background-color:<%= spacer_color outer_count -%>;">
+                    &nbsp;
+                  </td>
                 </tr>
               </table>
-              <!-- // END FOOTER -->
             </td>
-          </tr>
-        </table>
-        <!-- // END TEMPLATE -->
+          </tr><!-- end of title section -->
+
+          <% @index_count = 1 %>
+          <% obj[:fields].each_with_index do |field, inner_count| %>
+            <!-- content data rows -->
+            <% unless field[:hide] %>
+              <tr>
+                <td style="background-color:<%= body_bgcolor -%>; color:<%= body_color -%>;font-size:18px;font-weight:400;font-family:Helvetica,Arial,sans-serif !important;">
+                  <table dir="<%= dir_for_locale %>" border="0" cellpadding="0" cellspacing="0" width="100%" style="font-size:14px;font-weight:400;font-family:Helvetica,Arial,sans-serif !important;border-collapse:collapse;">
+                    <tr>
+                      <td class="highlight-side-spacer" width="5%" style="background-color:<%= spacer_color(outer_count, inner_count) -%>;">&nbsp;</td>
+                      <td>
+                        <table dir="<%= dir_for_locale %>" border="0" cellpadding="0" cellspacing="0" width="66%" align="center" style="margin:0 auto;border-collapse:collapse;">
+                          <tr>
+                            <td style="padding: 15px 0 15px 0;background-color:<%= body_bgcolor -%>; color:<%= body_color -%>;font-size:14px;font-weight:400;font-family:Helvetica,Arial,sans-serif !important;<%= table_border_style obj[:fields].count, inner_count -%>" width="66%">
+                              <%= t field[:key] -%>
+                              <% if field[:description_key] -%>
+                                <%= raw superscript @index_count -%>
+                                <% @index_count += 1 -%>
+                              <% end -%>
+                            </td>
+                            <td style="padding: 15px 0 15px 0;background-color:<%= body_bgcolor -%>; color:<%= body_color -%>;font-size:14px;font-weight:400;font-family:Helvetica,Arial,sans-serif !important;<%= table_border_style obj[:fields].count, inner_count -%>" width="16%">
+                              <%= field[:value] -%>
+                            </td>
+                            <td style="padding: 15px 0 15px 0;background-color:<%= body_bgcolor -%>; color:<%= body_color -%>;font-size:14px;font-weight:400;font-family:Helvetica,Arial,sans-serif !important;<%= table_border_style obj[:fields].count, inner_count -%>" width="16%">
+                              <%= field[:compare] -%>
+                            </td>
+                          </tr>
+                        </table>
+
+                      </td>
+                      <td class="highlight-side-spacer" width="5%" style="background-color:<%= spacer_color(outer_count, inner_count) -%>;">&nbsp;</td>
+                    </tr>
+                  </table>
+                </td>
+              </tr><!-- end of content data rows -->
+              <% end %><!-- end of hide -->
+          <% end %>
+
+          <% @index_count = 1 %>
+          <% obj[:fields].each do |field| %>
+            <% if field[:description_key].present? && !field[:hide] %>
+              <tr>
+                <td style="background-color:<%= body_bgcolor -%>; color:<%= body_color -%>;font-size:14px;font-weight:400;font-family:Helvetica,Arial,sans-serif !important;">
+                  <table dir="<%= dir_for_locale %>" border="0" cellpadding="0" cellspacing="0" width="100%" style="font-size:14px;font-weight:400;font-family:Helvetica,Arial,sans-serif !important;border-collapse:collapse;">
+                    <tr>
+                      <td class="highlight-side-spacer" width="5%" style="background-color:<%= bg_color -%>;">&nbsp;</td>
+                      <td>
+                        <table dir="<%= dir_for_locale %>" border="0" cellpadding="0" cellspacing="0" width="66%" align="center" style="font-size:14px;font-weight:400;font-family:Helvetica,Arial,sans-serif !important;margin:0 auto;border-collapse:collapse;">
+                          <tr>
+                            <td style="<%= @index_count.to_i == 1 ? 'padding:15px 0 0 0;' : 'padding:7px 0 0 0;' -%>background-color:<%= body_bgcolor -%>; color:<%= body_color -%>;font-size:12px;font-weight:400;font-family:Helvetica,Arial,sans-serif !important;<% if @index_count.to_i == 1 -%>border-top:1px solid #dddddd;
+                              <% end %>" width="100%">
+                              [<%= @index_count -%>] <%= t field[:description_key] -%>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td class="highlight-side-spacer" width="5%" style="background-color:<%= bg_color -%>;">&nbsp;</td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <% @index_count += 1 -%>
+            <% end %>
+          <% end %>
+
+
+          <!-- content data bottom padding row -->
+          <tr>
+            <td style="background-color:<%= body_bgcolor -%>;font-size:15px;line-height:15px;">
+              <table dir="<%= dir_for_locale %>" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse;">
+                <tr>
+                  <td class="highlight-side-spacer" width="5%" style="background-color:<%= bg_color -%>;font-size:20px;line-height:20px;">&nbsp;</td>
+                  <td style="background-color:<%= body_bgcolor -%>;font-size:20px;line-height:20px;" width="90%">&nbsp;</td>
+                  <td class="highlight-side-spacer" width="5%" style="background-color:<%= bg_color -%>;font-size:20px;line-height:20px;">&nbsp;</td>
+                </tr>
+              </table>
+            </td>
+          </tr><!-- end of content data bottom padding row -->
+
+          <!-- horizontal spacer row (gray) -->
+          <tr>
+            <td style="background-color:<%= bg_color -%>;font-size:30px;line-height:30px;" width="100%">
+              &nbsp;
+            </td>
+          </tr><!-- end of horizontal spacer row -->
+          <% end %><!-- end of data loop -->
+
+
+        <tr>
+          <td>
+            <table dir="<%= dir_for_locale %>" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse;font-size:12px;font-weight:400;font-family:Helvetica,Arial,sans-serif !important;">
+              <tr>
+                <td style="background-color:<%= bg_color -%>; color:<%= text_color -%>;font-size:12px;font-weight:400;font-family:Helvetica,Arial,sans-serif !important;text-align:center">
+                  <%= raw(t 'statistics_digest.unsubscribe', site_link: site_link("blue"), email_preferences_link: statistics_digest_link("blue")) %>
+                </td>
+              </tr>
+              <tr>
+                <td style="background-color:<%= bg_color -%>;font-size:30px;line-height:30px;" width="100%">
+                  &nbsp;
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+
+        <!-- email content ends here -->
+      </table><!-- end of inner table -->
+      <!--[if (gte mso 9)|(IE)]>
       </td>
-    </tr>
-  </table>
-</center>
+      </tr>
+      </table>
+      <![endif]-->
+    </td>
+  </tr>
+</table><!-- end of outer table -->
+
 </body>
 </html>
