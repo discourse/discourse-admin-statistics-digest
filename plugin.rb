@@ -7,8 +7,8 @@
 
 enabled_site_setting :admin_statistics_digest
 
-gem 'rufus-scheduler', '3.1.8'
-gem 'sidekiq-scheduler', '2.0.9'
+gem 'rufus-scheduler', '3.2.0'
+gem 'sidekiq-scheduler', '2.2.1'
 
 add_admin_route 'admin_statistics_digest.title', 'admin-statistics-digest'
 
